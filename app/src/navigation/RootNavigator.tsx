@@ -1,9 +1,10 @@
-import React, { createContext, createRef, useContext, useEffect, useState } from "react";
+import React, { createRef, useEffect, useState } from "react";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
 import { NavigationContainer, type NavigationContainerRef } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import type { Session } from "@supabase/supabase-js";
 import { supabase } from "../lib/supabase";
+import { AuthContext } from "../contexts/AuthContext";
 import AuthStack from "./AuthStack";
 import MainStack from "./MainStack";
 
@@ -15,22 +16,6 @@ type RootStackParamList = {
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
-
-type AuthContextType = {
-  session: Session | null;
-  hasProfile: boolean;
-  setHasProfile: (v: boolean) => void;
-};
-
-const AuthContext = createContext<AuthContextType>({
-  session: null,
-  hasProfile: false,
-  setHasProfile: () => {},
-});
-
-export function useAuth() {
-  return useContext(AuthContext);
-}
 
 export default function RootNavigator() {
   const [session, setSession] = useState<Session | null>(null);

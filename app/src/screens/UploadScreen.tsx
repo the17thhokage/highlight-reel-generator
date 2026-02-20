@@ -10,7 +10,7 @@ import * as ImagePicker from "expo-image-picker";
 import * as Notifications from "expo-notifications";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { supabase } from "../lib/supabase";
-import { useAuth } from "../navigation/RootNavigator";
+import { useAuth } from "../contexts/AuthContext";
 import type { MainStackParamList } from "../navigation/MainStack";
 
 type Props = NativeStackScreenProps<MainStackParamList, "Upload">;

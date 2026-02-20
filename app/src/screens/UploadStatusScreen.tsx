@@ -9,7 +9,7 @@ import {
 import { useFocusEffect } from "@react-navigation/native";
 import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { supabase } from "../lib/supabase";
-import { useAuth } from "../navigation/RootNavigator";
+import { useAuth } from "../contexts/AuthContext";
 import type { MainStackParamList } from "../navigation/MainStack";
 import type { Upload } from "../types";
 

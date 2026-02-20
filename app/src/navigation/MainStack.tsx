@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { useAuth } from "./RootNavigator";
+import { useAuth } from "../contexts/AuthContext";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileSetupScreen from "../screens/ProfileSetupScreen";
 import ProfileEditScreen from "../screens/ProfileEditScreen";
